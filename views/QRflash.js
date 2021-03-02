@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 });
 
 function goodQR(navigation) {
-    Alert.alert("lol");
+    navigation.navigate('CodeDetails');
 };
 
 function badQR(msg) {

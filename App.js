@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './views/Home';
 import Authentification from './views/Authentification';
 import QRflash from './views/QRflash';
+import CodeDetails from './views/CodeDetails';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,13 @@ export default function App() {
           <Stack.Screen
             name="QRflash"
             component={QRflash}
+            options={{
+              headerShown: false
+        }}
+          />
+          <Stack.Screen
+            name="CodeDetails"
+            component={CodeDetails}
             options={{
               headerShown: false
         }}
