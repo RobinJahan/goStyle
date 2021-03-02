@@ -1,18 +1,19 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 class Header extends React.Component {
     render() {
         return (
             <View style={styles.header}>
-                <Text style={styles.white}>GoStyle App</Text>
+                <Text style={styles.title}>{this.props.title}</Text>
+                <Button title='connexion' onPress={() => this.props.navigation.navigate('Authentification')} color="#D59312" style={styles.btn}/>
             </View>
         )
     }
 }
 
 const styles = {
-    white: {
+    title: {
         marginTop: 30,
         marginLeft: 15,
         fontWeight: 'bold',
@@ -24,6 +25,10 @@ const styles = {
         width: "100%",
         height: 100,
         backgroundColor: '#daa520',
+        justifyContent: 'space-between',
+    },
+    btn: {
+        //ne marche pas
     }
 };
 

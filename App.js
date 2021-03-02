@@ -1,27 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import Promotion from './components/Promotion.js';
-import data from './helpers/dataPromotions';
-import Header from './components/Header';
+import { StyleSheet, View } from 'react-native';
+
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from './views/Home';
+import Authentification from './views/Authentification';
+import QRflash from './views/QRflash';
+
+const Stack = createStackNavigator();
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header></Header>
-      <StatusBar style="auto" />
-      <FlatList
-        data={data}
-        renderItem={({ item }) => <Promotion
-        id={ item.id }
-        nom={ item.nom }
-        description={ item.description }
-        mentionLegal={ item.mentionLegal }
-        dateDebut={ item.dateDebut }
-        dateFin={ item.dateFin }
-      ></Promotion>}
-      />
+      <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+            component={Home}
+            options={{
+              headerShown: false
+        }}
+          />
+          <Stack.Screen
+            name="Authentification"
+            component={Authentification}
+            options={{
+              headerShown: false
+        }}
+          />
+          <Stack.Screen
+            name="QRflash"
+            component={QRflash}
+            options={{
+              headerShown: false
+        }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
