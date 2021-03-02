@@ -1,12 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import Promotion from './components/Promotion.js';
+import data from './helpers/dataPromotions';
+import Header from './components/Header';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Header></Header>
       <StatusBar style="auto" />
+      <FlatList
+        data={data}
+        renderItem={({ item }) => <Promotion
+        id={ item.id }
+        nom={ item.nom }
+        description={ item.description }
+        mentionLegal={ item.mentionLegal }
+        dateDebut={ item.dateDebut }
+        dateFin={ item.dateFin }
+      ></Promotion>}
+      />
     </View>
   );
 }
@@ -14,8 +29,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#555',
   },
 });
