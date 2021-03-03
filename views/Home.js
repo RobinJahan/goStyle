@@ -9,7 +9,6 @@ class Home extends React.Component {
         return (
             <View style={styles.container}>
                 <Header 
-                title="GoStyle App"
                 navigation={this.props.navigation}></Header>
                 <StatusBar style="auto" />
                 <FlatList

@@ -1,12 +1,22 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, Pressable } from 'react-native'
+import { IconButton, Colors } from 'react-native-paper';
+
 
 class Header extends React.Component {
     render() {
         return (
             <View style={styles.header}>
-                <Text style={styles.title}>{this.props.title}</Text>
-                <Button title='connexion' onPress={() => this.props.navigation.navigate('Authentification')} color="#D59312" style={styles.btn}/>
+                <Pressable onPress={() => {this.props.navigation.navigate('Home')}}>
+                <Text style={styles.title}>GoStyle App</Text>
+                </Pressable>
+                <IconButton
+                    style={styles.icon}
+                    icon="account"
+                    color={Colors.white}
+                    size={40}
+                    onPress={() => this.props.navigation.navigate('Authentification')}
+                />
             </View>
         )
     }
@@ -14,7 +24,7 @@ class Header extends React.Component {
 
 const styles = {
     title: {
-        marginTop: 30,
+        marginTop: 35,
         marginLeft: 15,
         fontWeight: 'bold',
         fontSize: 30,
@@ -27,8 +37,9 @@ const styles = {
         backgroundColor: '#daa520',
         justifyContent: 'space-between',
     },
-    btn: {
-        //ne marche pas
+    icon: {
+        marginTop: 30,
+        marginRight: 15,
     }
 };
 

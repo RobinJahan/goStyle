@@ -10,7 +10,7 @@ export default data = [
    {
       id: '2',
       nom: "Promo chemise",
-      description: "1 chemise achetée, 20 offertes, on a décidé de faire faillite :)",
+      description: "1 chemise achetée =  20 offertes, on a décidé de faire faillite :)",
       mentionLegal: "blablabla c'est la mention legal que personne ne lit jamais.",
       dateDebut: "02/03/2021",
       dateFin: "02/04/2021",

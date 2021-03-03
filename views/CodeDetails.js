@@ -9,9 +9,11 @@ class CodeDetails extends React.Component {
         return (
             <View style={styles.container}>
                 <Header
-                    title="Code Promo !"
                     navigation={this.props.navigation}></Header>
-                <Text> tiens voila ton code : qui veut du caca caki collé au cucu</Text>
+                <View style={styles.card}>
+                    <Text>Code : </Text>
+                    <Text>qui veut du caca caki collé au cucu</Text>
+                </View>
                 <StatusBar style="auto" />
             </View>
         );
@@ -23,6 +25,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#555',
     },
+    card: {
+        marginTop: 10,
+        backgroundColor: '#BBB',
+        width: '80%',
+        marginLeft: '10%',
+        padding: 10,
+    }
 });
 
 
