@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button, Pressable } from 'react-native'
+import { View, Text, Button, Pressable, Image } from 'react-native'
 import { IconButton, Colors } from 'react-native-paper';
 
 
@@ -8,7 +8,10 @@ class Header extends React.Component {
         return (
             <View style={styles.header}>
                 <Pressable onPress={() => {this.props.navigation.navigate('Home')}}>
-                <Text style={styles.title}>GoStyle App</Text>
+                <Image
+                    source={require('../assets/gostyle-full-final-v23.png')}
+                    style={{width: 337, height: 75, marginTop: 12}}
+                />
                 </Pressable>
                 <IconButton
                     style={styles.icon}
@@ -23,22 +26,15 @@ class Header extends React.Component {
 }
 
 const styles = {
-    title: {
-        marginTop: 35,
-        marginLeft: 15,
-        fontWeight: 'bold',
-        fontSize: 30,
-        color: '#FFF',
-    },
     header: {
         flexDirection: 'row',
         width: "100%",
         height: 100,
-        backgroundColor: '#daa520',
+        backgroundColor: '#281F42',
         justifyContent: 'space-between',
     },
     icon: {
-        marginTop: 30,
+        marginTop: 25,
         marginRight: 15,
     }
 };
